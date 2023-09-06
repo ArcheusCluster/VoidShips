@@ -2,27 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tu8oc8cwf37d"
-path="res://.godot/imported/MenuPointerActive.png-d5db3530b417c0ef03f9e1c0db5134c4.ctex"
+uid="uid://bupbs0xl7kv64"
+path="res://.godot/imported/MenuPointerInactive.png-ed0c130be4bc1cdd0a544e57d4d6d0d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pointers/MenuPointerActive.png"
-dest_files=["res://.godot/imported/MenuPointerActive.png-d5db3530b417c0ef03f9e1c0db5134c4.ctex"]
+source_file="res://Scenes/Pointers/MenuPointerInactive.png"
+dest_files=["res://.godot/imported/MenuPointerInactive.png-ed0c130be4bc1cdd0a544e57d4d6d0d3.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
-mipmaps/limit=-1
+mipmaps/limit=0
 roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

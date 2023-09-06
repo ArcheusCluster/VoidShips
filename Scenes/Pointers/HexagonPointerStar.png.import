@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgbaksg53x4hp"
-path="res://.godot/imported/HexagonPointerPurple.png-0aecdc3886bf48748de146b0b239509f.ctex"
+uid="uid://chngjva5d5ev0"
+path="res://.godot/imported/HexagonPointerStar.png-864f9bcc6f1c4d9c1188886d7a629236.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pointers/HexagonPointerPurple.png"
-dest_files=["res://.godot/imported/HexagonPointerPurple.png-0aecdc3886bf48748de146b0b239509f.ctex"]
+source_file="res://Scenes/Pointers/HexagonPointerStar.png"
+dest_files=["res://.godot/imported/HexagonPointerStar.png-864f9bcc6f1c4d9c1188886d7a629236.ctex"]
 
 [params]
 

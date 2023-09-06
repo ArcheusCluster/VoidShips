@@ -1,51 +1,203 @@
-[gd_scene load_steps=4 format=3 uid="uid://cms6jytji06mc"]
+[gd_scene load_steps=12 format=3 uid="uid://cms6jytji06mc"]
 
 [ext_resource type="Script" path="res://Scenes/GUI_UI/MainUI/mainMenuScript.gd" id="1_sp7e6"]
 [ext_resource type="FontFile" uid="uid://cdmfsji4q20u4" path="res://Fonts/ChillPixels-Maximal.otf" id="2_c3mxt"]
-[ext_resource type="PackedScene" uid="uid://dygotfdixd1xq" path="res://Pointers/Pointer.tscn" id="3_67w6i"]
+[ext_resource type="Texture2D" uid="uid://cgp32riopkqne" path="res://Scenes/Players/Bullets/bala_blanca.png" id="2_j7rt4"]
+[ext_resource type="Texture2D" uid="uid://imr1ofu0kxsy" path="res://Scenes/World/FirstWorld/RedRams.png" id="3_8a8wt"]
+[ext_resource type="Texture2D" uid="uid://d0itpbnd3nuol" path="res://Scenes/World/FirstWorld/earthPlanet.png" id="3_hiyuc"]
+[ext_resource type="Texture2D" uid="uid://b6i2s3lfshdch" path="res://Scenes/GUI_UI/MainUI/MenuButton.png" id="5_5y7y7"]
+[ext_resource type="Texture2D" uid="uid://dug8bkceag6m8" path="res://Scenes/Players/Max´s/suicideShip.png" id="8_0vqyi"]
+
+[sub_resource type="Theme" id="Theme_umce7"]
+
+[sub_resource type="Gradient" id="Gradient_vlwix"]
+offsets = PackedFloat32Array(0, 0.178218, 0.663366, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_thgkc"]
+gradient = SubResource("Gradient_vlwix")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eclq5"]
+emission_shape = 3
+emission_box_extents = Vector3(650, 325, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 1, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_thgkc")
 
 [node name="MenuPrincipal" type="Node2D"]
+position = Vector2(1150, 0)
 script = ExtResource("1_sp7e6")
 
-[node name="Control" type="Control" parent="."]
+[node name="Fondo" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_left = -1151.0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Iniciar" type="Button" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Fondo"]
+light_mask = 32
+visibility_layer = 32
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -167.0
-offset_top = -44.0
-offset_right = 167.0
-offset_bottom = 44.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_c3mxt")
-theme_override_font_sizes/font_size = 20
-text = "Jugar"
+theme = SubResource("Theme_umce7")
+color = Color(0, 0, 0, 1)
 
-[node name="Cerrar" type="Button" parent="Control"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Fondo"]
+position = Vector2(1152, 318)
+scale = Vector2(5, 1)
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_eclq5")
+texture = ExtResource("2_j7rt4")
+lifetime = 3.0
+randomness = 1.0
+
+[node name="Rams" type="Sprite2D" parent="."]
+modulate = Color(0.419608, 0.419608, 0.419608, 1)
+texture_filter = 1
+position = Vector2(-431, 499)
+scale = Vector2(9, 9)
+texture = ExtResource("3_8a8wt")
+
+[node name="planetEarth" type="Sprite2D" parent="."]
+modulate = Color(0.419608, 0.419608, 0.419608, 1)
+position = Vector2(1035, 268)
+scale = Vector2(0.578788, 0.54697)
+texture = ExtResource("3_hiyuc")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1082.0
+offset_top = 64.0
+offset_right = -541.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("2_c3mxt")
+theme_override_font_sizes/font_size = 100
+text = "Void Ships
+"
+
+[node name="EscenaGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1150.0
+offset_right = 1149.0
+offset_bottom = 646.0
+
+[node name="MaxSeleccion" type="Button" parent="EscenaGUI"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1178.0
+offset_top = 276.0
+offset_right = 1371.0
+offset_bottom = 330.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_c3mxt")
+text = "Max (Melee)"
+icon = ExtResource("5_5y7y7")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="iniciarElMundo" type="Button" parent="EscenaGUI" groups=["buttonGroup"]]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -21.0
-offset_top = -31.0
-offset_right = 21.0
+offset_left = 548.5
+offset_top = -40.0
+offset_right = 648.5
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_c3mxt")
+text = "Ir al Mundo"
+
+[node name="Volver al menu inicial" type="Button" parent="EscenaGUI" groups=["buttonGroup"]]
+layout_mode = 0
+offset_left = 2194.0
+offset_top = 17.0
+offset_right = 2254.0
+offset_bottom = 48.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_c3mxt")
+text = "Volver"
+
+[node name="Aviso Seleccion" type="Label" parent="EscenaGUI"]
+layout_mode = 0
+offset_left = 1562.0
+offset_top = 10.0
+offset_right = 1921.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("2_c3mxt")
+theme_override_font_sizes/font_size = 29
+text = "Seleccione un personaje"
+
+[node name="Iniciar" type="Button" parent="EscenaGUI" groups=["buttonGroup"]]
+texture_filter = 1
+layout_mode = 1
+offset_left = 108.0
+offset_top = 401.0
+offset_right = 367.0
+offset_bottom = 462.0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_c3mxt")
+theme_override_font_sizes/font_size = 20
+text = "Jugar"
+icon = ExtResource("5_5y7y7")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Cerrar" type="Button" parent="EscenaGUI" groups=["buttonGroup"]]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1058.5
+offset_top = -154.0
+offset_right = -871.5
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+focus_mode = 0
 theme_override_fonts/font = ExtResource("2_c3mxt")
 text = "Salir"
+icon = ExtResource("5_5y7y7")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
-[node name="CustomPointer" parent="." instance=ExtResource("3_67w6i")]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-575, 325)
 
-[connection signal="button_down" from="Control/Iniciar" to="." method="_on_iniciar_button_down"]
-[connection signal="button_down" from="Control/Cerrar" to="." method="_on_cerrar_button_down"]
+[node name="SuicideShip" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(589, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("8_0vqyi")
+
+[connection signal="mouse_entered" from="EscenaGUI" to="." method="_on_escena_gui_mouse_entered"]
+[connection signal="mouse_exited" from="EscenaGUI" to="." method="_on_escena_gui_mouse_exited"]
+[connection signal="button_down" from="EscenaGUI/MaxSeleccion" to="." method="_on_max_seleccion_button_down"]
+[connection signal="button_down" from="EscenaGUI/iniciarElMundo" to="." method="_on_iniciar_el_mundo_button_down"]
+[connection signal="button_down" from="EscenaGUI/Volver al menu inicial" to="." method="_on_volver_al_menu_inicial_button_down"]
+[connection signal="button_down" from="EscenaGUI/Iniciar" to="." method="_on_iniciar_button_down"]
+[connection signal="mouse_entered" from="EscenaGUI/Iniciar" to="." method="_on_iniciar_mouse_entered"]
+[connection signal="button_down" from="EscenaGUI/Cerrar" to="." method="_on_cerrar_button_down"]

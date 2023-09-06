@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cad8oxbpfuctf"]
+[gd_scene load_steps=18 format=3 uid="uid://cad8oxbpfuctf"]
 
 [ext_resource type="Script" path="res://Scenes/GUI_UI/PlayerGUI/playerUIScript.gd" id="1_arrvw"]
 [ext_resource type="FontFile" uid="uid://cdmfsji4q20u4" path="res://Fonts/ChillPixels-Maximal.otf" id="2_wcbg0"]
-[ext_resource type="PackedScene" uid="uid://dygotfdixd1xq" path="res://Pointers/Pointer.tscn" id="3_au0bp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4tsg"]
 bg_color = Color(0.337255, 0.584314, 0, 1)
@@ -207,8 +206,6 @@ size = Vector2(587, 10)
 
 [node name="playerUI" type="Node2D" groups=["barTakenExperience", "gui_Info"]]
 script = ExtResource("1_arrvw")
-
-[node name="CustomPointer" parent="." instance=ExtResource("3_au0bp")]
 
 [node name="HudUI" type="Control" parent="."]
 layout_mode = 3
