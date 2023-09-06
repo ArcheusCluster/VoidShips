@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/GUI_UI/SelectPlayerGUI/select_playerScript.gd" id="1_tb0t5"]
 [ext_resource type="FontFile" uid="uid://cdmfsji4q20u4" path="res://Fonts/ChillPixels-Maximal.otf" id="2_wsdlg"]
-[ext_resource type="PackedScene" uid="uid://dygotfdixd1xq" path="res://Pointers/Pointer.tscn" id="3_tvwca"]
+[ext_resource type="PackedScene" uid="uid://dygotfdixd1xq" path="res://Scenes/Pointers/Pointer.tscn" id="3_tvwca"]
 
 [node name="SelectPlayer" type="Node2D"]
 script = ExtResource("1_tb0t5")

@@ -2,6 +2,7 @@ extends Control
 
 
 func _on_seguir_button_down():
+	get_tree().call_group("pointerGroup","showCursor")
 	$".".visible= false
 	$"..".escapeMenuVisible= false
 

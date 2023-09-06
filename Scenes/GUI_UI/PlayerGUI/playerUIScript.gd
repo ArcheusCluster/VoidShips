@@ -16,7 +16,6 @@ func _ready():
 	$HudUI/LVL_Label/levelBar.max_value= experienceMaxValue
 	$HudUI/HP_Label/HP_Bar.max_value= GLOBALMANAGER.playerMaxLife
 	global_position = Vector2(0,0)
-	$CustomPointer.type = 2
 
 func actualizeLevelPlayer(amount):
 	$HudUI/LVL_Label.text = levelLabelText + str(amount)
