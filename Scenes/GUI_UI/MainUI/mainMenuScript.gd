@@ -40,4 +40,6 @@ func _on_max_seleccion_button_down():
 	$SuicideShip.visible = true
 	GLOBALMANAGER.playerSeleccionado = 1
 	$EscenaGUI/iniciarElMundo.disabled= false
+	
+#a
 
